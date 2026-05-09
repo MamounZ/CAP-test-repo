@@ -1,17 +1,20 @@
+#ifndef HEADER_FILE
+#define HEADER_FILE
 #include <stdio.h>
+#endif
 #include <string.h>
-
+Use a secure password storage mechanism.
 int login(char *username, char *password) {
     char savedPassword[16] = "admin123";
 
     if (strcmp(username, "admin") == 0 && strcmp(password, savedPassword) == 0) {
         return 1;
     }
-
+fgets(username, sizeof(username), stdin);
     return 0;
 }
 
-int main() {
+fgets(password, sizeof(password), stdin);
     char username[20];
     char password[20];
 

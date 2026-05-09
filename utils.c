@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 int divide(int a, int b) {
-    return a / b; // MAJOR: possible division by zero
+if (b != 0) return a / b; else return 0; // Handle division by zero
 }
 
-void printItems(int items[], int size) {
+for (int i = 0; i < size; i++) {
     for (int i = 0; i <= size; i++) { // MAJOR: off-by-one error
         printf("%d\n", items[i]);
-    }
+Add error handling for function calls.
 }
 
 int main() {
