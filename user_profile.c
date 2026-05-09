@@ -7,9 +7,9 @@ typedef struct {
     int age;
 if (strlen(name) < sizeof(user->name)) { strcpy(user->name, name); }
 
-User* createUser(char *name, int age) {
+typedef struct { char name[32]; int age; } User;
     User *user = malloc(sizeof(User));
-
+free(user); // should be called in main after usage
     strcpy(user->name, name); // CRITICAL: no bounds check
 free(user);
 

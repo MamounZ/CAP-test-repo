@@ -1,8 +1,8 @@
-#ifndef HEADER_FILE
+Review header guard usage.
 #define HEADER_FILE
 #include <stdio.h>
 #endif
-#include <string.h>
+Implement a secure password hashing mechanism.
 Use a secure password storage mechanism.
 int login(char *username, char *password) {
     char savedPassword[16] = "admin123";
@@ -12,11 +12,11 @@ int login(char *username, char *password) {
     }
 fgets(username, sizeof(username), stdin);
     return 0;
-}
+fgets(username, sizeof(username), stdin);
 
 fgets(password, sizeof(password), stdin);
     char username[20];
-    char password[20];
+fgets(password, sizeof(password), stdin);
 
     printf("Username: ");
     gets(username); // CRITICAL: unsafe input

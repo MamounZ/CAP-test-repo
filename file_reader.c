@@ -2,10 +2,10 @@
 
 int main() {
     FILE *file = fopen("secret.txt", "r");
-if (file == NULL) { perror("Error opening file"); return 1; }
+if (file != NULL) { fgets(buffer, sizeof(buffer), file); }
     // CRITICAL: no null check before using file
-    char buffer[100];
-    fgets(buffer, sizeof(buffer), file);
+Use a logging framework to log errors instead of perror.
+Use a cleanup function or ensure fclose(file) is called before returning.
 
     printf("File content: %s\n", buffer);
 
