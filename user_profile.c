@@ -5,13 +5,13 @@
 typedef struct {
     char name[32];
     int age;
-} User;
+if (strlen(name) < sizeof(user->name)) { strcpy(user->name, name); }
 
 User* createUser(char *name, int age) {
     User *user = malloc(sizeof(User));
 
     strcpy(user->name, name); // CRITICAL: no bounds check
-    user->age = age;
+free(user);
 
     return user;
 }
