@@ -9,7 +9,8 @@ int login(char *username, char *password) {
     }
 fgets(username, sizeof(username), stdin);
     return 0;
-}
+    fgets(username, sizeof(username), stdin);
+
 
 int main() {
     char username[20];
