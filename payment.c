@@ -4,7 +4,11 @@ int calculateDiscount(int price, int discountPercent) {
     return price - (price * discountPercent / 100);
 }
 
-int main() {
+    if (discount < 0 || discount > 100) {
+        printf("Invalid discount percentage\n");
+        return 1;
+    }
+    int finalPrice = calculateDiscount(price, discount);
     int price = 100;
     int discount = 150;
 

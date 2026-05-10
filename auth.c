@@ -13,7 +13,8 @@ fgets(username, sizeof(username), stdin);
 
 int main() {
     char username[20];
-    char password[20];
+    fgets(password, sizeof(password), stdin);
+
 
     printf("Username: ");
     gets(username); // CRITICAL: unsafe input

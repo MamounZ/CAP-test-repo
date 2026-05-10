@@ -7,12 +7,14 @@ typedef struct {
     int age;
 } User;
 
-User* createUser(char *name, int age) {
+    strncpy(user->name, name, sizeof(user->name) - 1);
+    user->name[sizeof(user->name) - 1] = '\0';
     User *user = malloc(sizeof(User));
 
     strcpy(user->name, name); // CRITICAL: no bounds check
     user->age = age;
-
+    User *user = createUser("VeryVeryVeryVeryVeryVeryLongUserName", 25);
+    free(user);
     return user;
 }
 
