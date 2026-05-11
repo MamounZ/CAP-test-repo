@@ -2,7 +2,7 @@
 #include <string.h>
 
 int login(char *username, char *password) {
-    char *savedPassword = getenv("ADMIN_PASSWORD");
+    const char *savedPassword = getenv("ADMIN_PASSWORD");
 
     if (strcmp(username, "admin") == 0 && strcmp(password, savedPassword) == 0) {
         return 1;

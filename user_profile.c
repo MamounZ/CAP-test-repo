@@ -19,13 +19,13 @@ User* createUser(char *name, int age) {
 
 int main() {
 User *user = NULL;
-user = createUser("VeryVeryVeryVeryVeryVeryLongUserName", 25);
+user = createUser("ShortName", 25);
 if (user != NULL) {
     printf("User: %s\n", user->name);
     free(user);
 }
 
-    printf("User: %s\n", user->name);
+// printf("User: %s\n", user->name);
     free(user);
     // MAJOR: memory leak, user is never freed
 

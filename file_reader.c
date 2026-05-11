@@ -7,7 +7,15 @@ int main() {
         return 1;
     }
 
-    // CRITICAL: no null check before using file
+if (file != NULL) {
+	char buffer[100];
+	if (fgets(buffer, sizeof(buffer), file) == NULL) {
+		perror("Error reading file");
+		fclose(file);
+		return 1;
+	}
+	printf("File content: %s\n", buffer);
+}
     char buffer[100];
     if (fgets(buffer, sizeof(buffer), file) == NULL) {
         perror("Error reading file");
