@@ -2,6 +2,10 @@
 
 int main() {
     FILE *file = fopen("secret.txt", "r");
+    if (file == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
 
     // CRITICAL: no null check before using file
     char buffer[100];
