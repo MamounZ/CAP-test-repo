@@ -7,7 +7,6 @@ int login(char *username, char *password) {
     if (strcmp(username, "admin") == 0 && strcmp(password, savedPassword) == 0) {
         return 1;
     }
-fgets(username, sizeof(username), stdin);
     return 0;
 }
 
