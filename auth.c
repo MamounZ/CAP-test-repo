@@ -15,10 +15,10 @@ int main() {
     char password[20];
 
     printf("Username: ");
-    gets(username); // CRITICAL: unsafe input
+    fgets(username, sizeof(username), stdin);
 
     printf("Password: ");
-    gets(password); // CRITICAL: buffer overflow risk
+    fgets(password, sizeof(password), stdin);
 
     if (login(username, password)) {
         printf("Login successful\n");

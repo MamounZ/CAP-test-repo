@@ -10,7 +10,8 @@ typedef struct {
 User* createUser(char *name, int age) {
     User *user = malloc(sizeof(User));
 
-    strcpy(user->name, name); // CRITICAL: no bounds check
+    strncpy(user->name, name, sizeof(user->name) - 1);
+    user->name[sizeof(user->name) - 1] = '\0';
     user->age = age;
 
     return user;
@@ -20,7 +21,7 @@ int main() {
     User *user = createUser("VeryVeryVeryVeryVeryVeryLongUserName", 25);
 
     printf("User: %s\n", user->name);
-
+    free(user);
     // MAJOR: memory leak, user is never freed
 
     return 0;
