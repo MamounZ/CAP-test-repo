@@ -18,7 +18,12 @@ User* createUser(char *name, int age) {
 }
 
 int main() {
-    User *user = createUser("VeryVeryVeryVeryVeryVeryLongUserName", 25);
+User *user = NULL;
+user = createUser("VeryVeryVeryVeryVeryVeryLongUserName", 25);
+if (user != NULL) {
+    printf("User: %s\n", user->name);
+    free(user);
+}
 
     printf("User: %s\n", user->name);
     free(user);

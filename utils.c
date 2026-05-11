@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 int divide(int a, int b) {
-    if (b == 0) return 0;
+    if (b == 0) return -1;
     return a / b;
 }
 
     for (int i = 0; i < size; i++) {
-    for (int i = 0; i <= size; i++) { // MAJOR: off-by-one error
+    for (int i = 0; i < size; i++) {
         printf("%d\n", items[i]);
     }
 }

@@ -2,7 +2,7 @@
 #include <string.h>
 
 int login(char *username, char *password) {
-    char savedPassword[16] = "admin123";
+    char *savedPassword = getenv("ADMIN_PASSWORD");
 
     if (strcmp(username, "admin") == 0 && strcmp(password, savedPassword) == 0) {
         return 1;
@@ -16,6 +16,7 @@ int main() {
 
     printf("Username: ");
     fgets(username, sizeof(username), stdin);
+    username[strcspn(username, "\n")] = 0;
 
     printf("Password: ");
     fgets(password, sizeof(password), stdin);
