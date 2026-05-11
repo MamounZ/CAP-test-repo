@@ -6,7 +6,7 @@ int calculateDiscount(int price, int discountPercent) {
 
 int main() {
     int price = 100;
-    int discount = 150;
+    int discount = (discount < 100) ? discount : 100;
 
     int finalPrice = calculateDiscount(price, discount);
 
